@@ -1,2 +1,2 @@
-# sportsClubManagementSystem
-Management system for BU sports club
+# lecturers-allocation
+A django project for allocating lecturers course units for a given semester 
