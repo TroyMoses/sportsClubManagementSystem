@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     # My Created Applications
     'client.apps.ClientConfig',
     'administrator.apps.AdministratorConfig',
-    'account.apps.AccountConfig',
     'staff.apps.StaffConfig',
     'business.apps.BusinessConfig',
     'report.apps.ReportConfig',
@@ -145,9 +144,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-AUTHENTICATION_BACKENDS = ['account.email_backend.EmailBackend']
-
-AUTH_USER_MODEL = 'account.CustomUser'
+AUTHENTICATION_BACKENDS = ['administrator.email_backend.EmailBackend']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
