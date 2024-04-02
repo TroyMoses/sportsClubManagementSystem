@@ -69,7 +69,7 @@ class TrainingSession(models.Model):
 
 class Match(models.Model):
     match_id = models.AutoField(primary_key=True)
-    date_time = models.DateTimeField()
+    date = models.DateField(default=None)
     home_team = models.CharField(max_length=100)
     away_team = models.CharField(max_length=100)
     venue = models.CharField(max_length=100)

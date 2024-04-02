@@ -7,8 +7,8 @@ from django.http import JsonResponse, HttpResponse
 from django.conf import settings
 from .email_backend import EmailBackend
 from django.contrib.auth import login, logout
-from .forms import PlayerForm, AdministratorForm, StaffForm
-from .models import Player, Administrator, Staff
+from .forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm
+from .models import Player, Administrator, Staff, Team, Match, TrainingSession
 
 def account_login(request):
     pass
@@ -123,4 +123,48 @@ def add_staff(request):
     else:
         messages.error(request, "Provided data failed validation") 
     return render(request, "add_staff.html", {'form': form})
+
+def teams(request):
+    teams = Team.objects.all()
+    return render(request, "teams.html", {'teams': teams})
+
+def add_team(request):
+    form = TeamForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('teams'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "add_team.html", {'form': form})
+
+def matches(request):
+    matches = Match.objects.all()
+    return render(request, "matches.html", {'matches': matches})
+
+def add_match(request):
+    form = MatchForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('matches'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "add_match.html", {'form': form})
+
+def sessions(request):
+    sessions = TrainingSession.objects.all()
+    return render(request, "sessions.html", {'sessions': sessions})
+
+def add_session(request):
+    form = TrainingSessionForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('sessions'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "add_session.html", {'form': form})
+
+
 

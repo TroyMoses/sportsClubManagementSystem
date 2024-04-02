@@ -14,12 +14,13 @@
                     <li> <a href="{% url 'staff' %}">Other Staff</a> </li>
                 </ul>
             </li>
+
+            <li><a href="{% url "teams" %}" aria-expanded="false"><i class="nav-icon ti ti-bag"></i><span class="nav-title">Teams</span></a> </li>
             <li>
-                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Business Office</span></a>
+                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Matches & Sessions</span></a>
                 <ul aria-expanded="false">
-                    <li> <a href="ui-alerts.html">Requisitions</a> </li>
-                    <li> <a href="ui-accordions.html">Completed</a> </li>
-                    <li> <a href="ui-accordions.html">Reports</a> </li>
+                    <li> <a href="{% url 'matches' %}">Matches</a> </li>
+                    <li> <a href="{% url 'sessions' %}">Training Sessions</a> </li>
                 </ul>
             </li>
             

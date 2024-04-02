@@ -16,4 +16,10 @@ urlpatterns = [
     path('add_administrator/', views.add_administrator, name="add_administrator"),
     path('staff/', views.staff, name="staff"),
     path('add_staff/', views.add_staff, name="add_staff"),
+    path('teams/', views.teams, name="teams"),
+    path('add_team/', views.add_team, name="add_team"),
+    path('matches/', views.matches, name="matches"),
+    path('add_match/', views.add_match, name="add_match"),
+    path('sessions/', views.sessions, name="sessions"),
+    path('add_session/', views.add_session, name="add_session"),
 ]

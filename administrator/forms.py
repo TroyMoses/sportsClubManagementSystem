@@ -99,7 +99,7 @@ class MatchForm(forms.ModelForm):
         model = Match
         fields = [
             'match_id',
-            'date_time',
+            'date',
             'home_team',
             'away_team',
             'venue',
