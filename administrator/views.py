@@ -111,16 +111,16 @@ def add_administrator(request):
     return render(request, "add_administrator.html", {'form': form})
 
 def staff(request):
-    staff = Player.objects.all()
-    return render(request, "players.html", {'players': players})
+    staff = Staff.objects.all()
+    return render(request, "staff.html", {'staff': staff})
 
 def add_staff(request):
-    form = PlayerForm(request.POST)
+    form = StaffForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('players'))
+            return redirect(reverse('staff'))
     else:
         messages.error(request, "Provided data failed validation") 
-    return render(request, "add_player.html", {'form': form})
+    return render(request, "add_staff.html", {'form': form})
 

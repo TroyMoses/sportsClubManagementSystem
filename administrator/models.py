@@ -52,6 +52,7 @@ class Staff(models.Model):
         ('Team Doctor', 'Team Doctor'),
     ]
     role = models.CharField(max_length=50, choices=role_choices, default='Head Coach')
+    contact_no = models.CharField(max_length=50)
 
 class TrainingSession(models.Model):
     training_session_id = models.AutoField(primary_key=True)

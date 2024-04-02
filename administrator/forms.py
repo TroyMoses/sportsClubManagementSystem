@@ -137,10 +137,9 @@ class StaffForm(forms.ModelForm):
             'staff_id',
             'first_name',
             'last_name',
+            'contact_no',
             'role',
         ]
-
-
 
 class DepartmentForm(forms.ModelForm):
     class Meta:
