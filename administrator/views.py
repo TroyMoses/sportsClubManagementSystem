@@ -9,61 +9,54 @@ from .email_backend import EmailBackend
 from django.contrib.auth import login, logout
 
 def account_login(request):
-    # if request.user.is_authenticated:
-    #     if user.user_type == '1':
-    #         return redirect(reverse("adminDashboard"))
-    #     elif user.user_type == '2':
-    #         return redirect(reverse("staffDashboard"))
+    pass
+    # if request.method == 'POST':
+    #     user = EmailBackend.authenticate(request, username=request.POST.get(
+    #         'email'), password=request.POST.get('password'))
+    #     if user != None:
+    #         login(request, user)
+    #         if user.user_type == '1':
+    #             return redirect(reverse("adminDashboard"))
+    #         elif user.user_type == '2':
+    #             return redirect(reverse("staffDashboard"))
+    #         else:
+    #             return redirect(reverse("cashierDashboard"))
     #     else:
-    #         return redirect(reverse("cashierDashboard"))
+    #         messages.error(request, "Invalid details")
+    #         return redirect("adminDashboard")
 
-    # context = {}
-    if request.method == 'POST':
-        user = EmailBackend.authenticate(request, username=request.POST.get(
-            'email'), password=request.POST.get('password'))
-        if user != None:
-            login(request, user)
-            if user.user_type == '1':
-                return redirect(reverse("adminDashboard"))
-            elif user.user_type == '2':
-                return redirect(reverse("staffDashboard"))
-            else:
-                return redirect(reverse("cashierDashboard"))
-        else:
-            messages.error(request, "Invalid details")
-            return redirect("adminDashboard")
-
-    return render(request, "auth/login.html")
+    # return render(request, "auth/login.html")
 
 
 def account_register(request):
-    userForm = CustomUserForm(request.POST or None)
-    context = {
-        'form1': userForm,
-    }
-    if request.method == 'POST':
-        if userForm.is_valid():
-            user = userForm.save(commit=False)
-            user.department = userForm.cleaned_data['department']
-            user.save()
-            messages.success(request, "Account created. You can login now!")
-            return redirect(reverse('account_login'))
-        else:
-            messages.error(request, "Provided data failed validation")
-            # return account_login(request)
-    return render(request, "auth/reg.html", context)
+    pass
+    # userForm = CustomUserForm(request.POST or None)
+    # context = {
+    #     'form1': userForm,
+    # }
+    # if request.method == 'POST':
+    #     if userForm.is_valid():
+    #         user = userForm.save(commit=False)
+    #         user.save()
+    #         messages.success(request, "Account created. You can login now!")
+    #         return redirect(reverse('account_login'))
+    #     else:
+    #         messages.error(request, "Provided data failed validation")
+    #         # return account_login(request)
+    # return render(request, "auth/reg.html", context)
 
 
 def account_logout(request):
-    user = request.user
-    if user.is_authenticated:
-        logout(request)
-        messages.success(request, "Thank you for visiting us!")
-    else:
-        messages.error(
-            request, "You need to be logged in to perform this action")
+    pass
+    # user = request.user
+    # if user.is_authenticated:
+    #     logout(request)
+    #     messages.success(request, "Thank you for visiting us!")
+    # else:
+    #     messages.error(
+    #         request, "You need to be logged in to perform this action")
 
-    return redirect(reverse("account_login"))
+    # return redirect(reverse("account_login"))
 
 def lock(request):
     return render(request, 'auth/lock_screen.html')
@@ -82,7 +75,14 @@ def dashboard(request):
     return render(request, "admin/dashboard.html")
 
 def reqStatus(request):
-    return render(request, "admin/reqStatus.html")
+    return render(request, "admin/reqstatus.html")
 
 def reportStatus(request):
     return render(request, "admin/reportStatus.html")
+
+def players(request):
+    return render(request, "players.html")
+
+def add_player(request):
+    return render(request, "add_player.html")
+

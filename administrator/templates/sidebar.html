@@ -3,10 +3,11 @@
     <!-- begin sidebar-nav -->
     <div class="sidebar-nav scrollbar scroll_light">
         <ul class="metismenu " id="sidebarNav">
+            
             <li class="nav-static-title">General</li>
-            <li><a href="{% url "adminDashboard" %}" aria-expanded="false"><i class="nav-icon ti ti-rocket"></i><span class="nav-title">Dashboard</span></a> </li>
-            <li><a href="{% url "requisition_phase1" %}" aria-expanded="false"><i class="nav-icon ti ti-email"></i><span class="nav-title">Requisition</span></a> </li>
-            {% comment %} <li><a href="app-chat.html" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Business Office</span></a> </li> {% endcomment %}
+            <li><a href="{% url "adminDashboard" %}" aria-expanded="false"><i class="nav-icon ti ti-rocket"></i><span class="nav-title">Admin Dashboard</span></a> </li>
+            <li><a href="{% url "players" %}" aria-expanded="false"><i class="nav-icon ti ti-email"></i><span class="nav-title">Players</span></a> </li>
+            <li><a href="app-chat.html" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Business Office</span></a> </li>
             <li>
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Department</span></a>
                 <ul aria-expanded="false">
@@ -73,7 +74,7 @@
                 </ul>
             </li> {% endcomment %}
 
-            <li><a href="{% url "account_logout" %}" aria-expanded="false"><i class="nav-icon ti ti-key"></i><span class="nav-title">Logout</span></a> </li>
+            <li><a href="" aria-expanded="false"><i class="nav-icon ti ti-key"></i><span class="nav-title">Logout</span></a> </li>
         </ul>
     </div>
     <!-- end sidebar-nav -->
