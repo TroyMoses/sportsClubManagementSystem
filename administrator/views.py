@@ -7,8 +7,8 @@ from django.http import JsonResponse, HttpResponse
 from django.conf import settings
 from .email_backend import EmailBackend
 from django.contrib.auth import login, logout
-from .forms import PlayerForm
-from .models import Player
+from .forms import PlayerForm, AdministratorForm, StaffForm
+from .models import Player, Administrator, Staff
 
 def account_login(request):
     pass
@@ -87,6 +87,34 @@ def players(request):
     return render(request, "players.html", {'players': players})
 
 def add_player(request):
+    form = PlayerForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('players'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "add_player.html", {'form': form})
+
+def administrators(request):
+    administrators = Administrator.objects.all()
+    return render(request, "administrators.html", {'administrators': administrators})
+
+def add_administrator(request):
+    form = AdministratorForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('administrators'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "add_administrator.html", {'form': form})
+
+def staff(request):
+    staff = Player.objects.all()
+    return render(request, "players.html", {'players': players})
+
+def add_staff(request):
     form = PlayerForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():

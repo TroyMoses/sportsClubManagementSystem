@@ -10,8 +10,8 @@ class AdministratorForm(forms.ModelForm):
             'admin_id',
             'first_name',
             'last_name',
-            'role',
             'contact_no',
+            'role',
         ]
 
 class FeedbackForm(forms.ModelForm):

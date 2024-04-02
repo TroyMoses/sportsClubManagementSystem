@@ -6,14 +6,12 @@
             
             <li class="nav-static-title">General</li>
             <li><a href="{% url "adminDashboard" %}" aria-expanded="false"><i class="nav-icon ti ti-rocket"></i><span class="nav-title">Admin Dashboard</span></a> </li>
-            <li><a href="{% url "players" %}" aria-expanded="false"><i class="nav-icon ti ti-email"></i><span class="nav-title">Players</span></a> </li>
-            <li><a href="app-chat.html" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Business Office</span></a> </li>
+            <li><a href="{% url "players" %}" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Players</span></a> </li>
             <li>
-                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Department</span></a>
+                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Staff</span></a>
                 <ul aria-expanded="false">
-                    <li> <a href="ui-alerts.html">Requisitions</a> </li>
-                    <li> <a href="ui-accordions.html">Completed</a> </li>
-                    <li> <a href="ui-accordions.html">Reports</a> </li>
+                    <li> <a href="{% url 'administrators' %}">Administrators</a> </li>
+                    <li> <a href="{% url 'staff' %}">Other Staff</a> </li>
                 </ul>
             </li>
             <li>

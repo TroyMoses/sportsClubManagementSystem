@@ -12,4 +12,7 @@ urlpatterns = [
     path('repst/', views.reportStatus, name="repst"),
     path('players/', views.players, name="players"),
     path('add_player/', views.add_player, name="add_player"),
+    path('administrators/', views.administrators, name="administrators"),
+    path('add_administrator/', views.add_administrator, name="add_administrator"),
+    path('staff/', views.staff, name="staff"),
 ]
