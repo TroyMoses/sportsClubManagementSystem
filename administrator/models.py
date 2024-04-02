@@ -25,7 +25,7 @@ class Player(models.Model):
         ('Female', 'Female'),
     ]
     gender = models.CharField(max_length=30, choices=gender_choices, default=None)
-    dob = models.DateTimeField()
+    dob = models.DateField()
     nationality = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     phone_number = models.CharField(max_length=50)

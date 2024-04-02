@@ -34,15 +34,15 @@ class PlayerForm(forms.ModelForm):
             'player_id',
             'first_name',
             'last_name',
-            'gender',
             'dob',
             'nationality',
             'email',
             'phone_number',
-            'player_game',
             'position',
             'jersey_no',
             'medical_condition',
+            'player_game',
+            'gender',
         ]
 
 class PlayerTeamForm(forms.ModelForm):
