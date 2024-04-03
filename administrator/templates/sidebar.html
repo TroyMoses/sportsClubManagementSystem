@@ -6,7 +6,17 @@
             
             <li class="nav-static-title">General</li>
             <li><a href="{% url "adminDashboard" %}" aria-expanded="false"><i class="nav-icon ti ti-rocket"></i><span class="nav-title">Admin Dashboard</span></a> </li>
-            <li><a href="{% url "players" %}" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Players</span></a> </li>
+            <li>
+                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Players</span></a>
+                <ul aria-expanded="false">
+                    <li> <a href="{% url 'players' %}">Players Details</a> </li>
+                    <li> <a href="{% url 'player_team' %}">Player Team</a> </li>
+                    <li> <a href="{% url 'player_matches' %}">Player Matches</a> </li>
+                    <li> <a href="{% url 'player_injuries' %}">Player Injuries</a> </li>
+                    <li> <a href="{% url 'player_feedback_session' %}">Player Session Feedback</a> </li>
+                    <li> <a href="{% url 'player_feedback_match' %}">Player Game Feedback</a> </li>
+                </ul>
+            </li>
             <li>
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Staff</span></a>
                 <ul aria-expanded="false">

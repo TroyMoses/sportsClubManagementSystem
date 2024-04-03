@@ -7,8 +7,8 @@ from django.http import JsonResponse, HttpResponse
 from django.conf import settings
 from .email_backend import EmailBackend
 from django.contrib.auth import login, logout
-from .forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm
-from .models import Player, Administrator, Staff, Team, Match, TrainingSession
+from .forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm, PlayerTeamForm, PlayerGameForm, InjuryForm, PlayerFeedbackForm1, PlayerFeedbackForm2, StaffFeedbackForm1, StaffFeedbackForm2
+from .models import Player, Administrator, Staff, Team, Match, TrainingSession, PlayerTeam, PlayerGame, Injury, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
 
 def account_login(request):
     pass
@@ -166,5 +166,34 @@ def add_session(request):
         messages.error(request, "Provided data failed validation") 
     return render(request, "add_session.html", {'form': form})
 
+def player_team(request):
+    player_team = PlayerTeam.objects.all()
+    return render(request, "player_team.html", {'player_team': player_team})
+
+def add_player_team(request):
+    form = PlayerTeamForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('player_team'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "add_player_team.html", {'form': form})
+
+def player_matches(request):
+    player_matches = PlayerGame.objects.all()
+    return render(request, "player_matches.html", {'player_matches': player_matches})
+
+def player_injuries(request):
+    player_injuries = Injury.objects.all()
+    return render(request, "player_injuries.html", {'player_injuries': player_injuries})
+
+def player_feedback_session(request):
+    player_feedback_session = PlayerFeedback1.objects.all()
+    return render(request, "player_feedback_session.html", {'player_feedback_session': player_feedback_session})
+
+def player_feedback_match(request):
+    player_feedback_match = PlayerFeedback2.objects.all()
+    return render(request, "player_feedback_match.html", {'player_feedback_match': player_feedback_match})
 
 

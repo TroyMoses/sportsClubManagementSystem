@@ -57,7 +57,7 @@ class Staff(models.Model):
 class TrainingSession(models.Model):
     training_session_id = models.AutoField(primary_key=True)
     staff_id = models.ForeignKey(Staff, on_delete=models.CASCADE)
-    date_time = models.DateTimeField()
+    date = models.DateField(default=None)
     location = models.CharField(max_length=100)
     type_choices = [
         ('Game Situations', 'Game situations'),
@@ -96,18 +96,50 @@ class Team(models.Model):
     ]
     league = models.CharField(max_length=30, choices=league_choices, default='National league')
 
-class Feedback(models.Model):
+class PlayerFeedback1(models.Model):
     feedback_id = models.AutoField(primary_key=True)
-    admin_id = models.ForeignKey(Administrator, null=True, on_delete=models.CASCADE)
+    
     player_id = models.ForeignKey(Player, null=True, on_delete=models.CASCADE)
-    staff_id = models.ForeignKey(Staff, null=True, on_delete=models.CASCADE)
     training_session_id = models.ForeignKey(TrainingSession, null=True, on_delete=models.CASCADE)
+    category_choices = [
+        ('Observations', 'Observations'),
+        ('Complaint', 'Complaint'),
+    ]
+    category = models.CharField(max_length=30, choices=category_choices, default='Observations')
+    description = models.TextField(default=None, max_length=200)
+
+class PlayerFeedback2(models.Model):
+    feedback_id = models.AutoField(primary_key=True)
+    player_id = models.ForeignKey(Player, null=True, on_delete=models.CASCADE)
     match_id = models.ForeignKey(Match, null=True, on_delete=models.CASCADE)
     category_choices = [
         ('Observations', 'Observations'),
         ('Complaint', 'Complaint'),
     ]
     category = models.CharField(max_length=30, choices=category_choices, default='Observations')
+    description = models.TextField(default=None, max_length=200)
+
+class StaffFeedback1(models.Model):
+    feedback_id = models.AutoField(primary_key=True)
+    staff_id = models.ForeignKey(Staff, null=True, on_delete=models.CASCADE)
+    training_session_id = models.ForeignKey(TrainingSession, null=True, on_delete=models.CASCADE)
+    category_choices = [
+        ('Observations', 'Observations'),
+        ('Complaint', 'Complaint'),
+    ]
+    category = models.CharField(max_length=30, choices=category_choices, default='Observations')
+    description = models.TextField(default=None, max_length=200)
+
+class StaffFeedback2(models.Model):
+    feedback_id = models.AutoField(primary_key=True)
+    staff_id = models.ForeignKey(Staff, null=True, on_delete=models.CASCADE)
+    match_id = models.ForeignKey(Match, null=True, on_delete=models.CASCADE)
+    category_choices = [
+        ('Observations', 'Observations'),
+        ('Complaint', 'Complaint'),
+    ]
+    category = models.CharField(max_length=30, choices=category_choices, default='Observations')
+    description = models.TextField(default=None, max_length=200)
 
 
 class PlayerTeam(models.Model):

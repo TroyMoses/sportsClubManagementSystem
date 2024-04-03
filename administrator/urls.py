@@ -22,4 +22,10 @@ urlpatterns = [
     path('add_match/', views.add_match, name="add_match"),
     path('sessions/', views.sessions, name="sessions"),
     path('add_session/', views.add_session, name="add_session"),
+    path('player_team/', views.player_team, name="player_team"),
+    path('add_player_team/', views.add_player_team, name="add_player_team"),
+    path('player_matches/', views.player_matches, name="player_matches"),
+    path('player_injuries/', views.player_injuries, name="player_injuries"),
+    path('player_feedback_session/', views.player_feedback_session, name="player_feedback_session"),
+    path('player_feedback_match/', views.player_feedback_match, name="player_feedback_match"),
 ]

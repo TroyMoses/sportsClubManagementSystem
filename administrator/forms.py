@@ -1,5 +1,5 @@
 from django import forms
-from .models import Player, Administrator, Feedback, Staff, Injury, Team, PlayerTeam, PlayerGame, TrainingSession, Attendance, Match
+from .models import Player, Administrator, Staff, Injury, Team, PlayerTeam, PlayerGame, TrainingSession, Attendance, Match, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
 from django.contrib.auth.hashers import make_password
 from .models import Department
 
@@ -14,17 +14,48 @@ class AdministratorForm(forms.ModelForm):
             'role',
         ]
 
-class FeedbackForm(forms.ModelForm):
+class PlayerFeedbackForm1(forms.ModelForm):
     class Meta:
-        model = Feedback
+        model = PlayerFeedback1
         fields = [
             'feedback_id',
-            'admin_id',
             'player_id',
-            'staff_id',
             'training_session_id',
+            'category',
+            'description'
+        ]
+
+class PlayerFeedbackForm2(forms.ModelForm):
+    class Meta:
+        model = PlayerFeedback2
+        fields = [
+            'feedback_id',
+            'player_id',
             'match_id',
             'category',
+            'description'
+        ]
+
+class StaffFeedbackForm1(forms.ModelForm):
+    class Meta:
+        model = StaffFeedback1
+        fields = [
+            'feedback_id',
+            'staff_id',
+            'training_session_id',
+            'category',
+            'description'
+        ]
+
+class StaffFeedbackForm2(forms.ModelForm):
+    class Meta:
+        model = StaffFeedback2
+        fields = [
+            'feedback_id',
+            'staff_id',
+            'match_id',
+            'category',
+            'description'
         ]
 
 class PlayerForm(forms.ModelForm):
@@ -49,10 +80,10 @@ class PlayerTeamForm(forms.ModelForm):
     class Meta:
         model = PlayerTeam
         fields = [
-            'player_id',
-            'team_id',
             'start_date',
             'end_date',
+            'player_id',
+            'team_id',
         ]
 
 class PlayerGameForm(forms.ModelForm):
@@ -87,9 +118,9 @@ class TrainingSessionForm(forms.ModelForm):
         model = TrainingSession
         fields = [
             'training_session_id',
-            'staff_id',
-            'date_time',
+            'date',
             'location',
+            'staff_id',
             'type',
             'description',
         ]

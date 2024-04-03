@@ -1,0 +1,64 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid">
+    <!-- begin row -->
+    <div class="row">
+        <div class="col-md-12 m-b-30">
+            <!-- begin page title -->
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                
+                <div class="row">
+                  <div class="col-10">
+                    <h2 class="text-muted">Player Game Analysis</h2>
+                  </div>
+              </div><br />
+                <div class="display_table">
+                    <table class='table table-bordered'>
+                      <thead>
+                        <tr>
+                          <th>Player ID</th>
+                          <th>Game ID</th>
+                          <th>Sets/Halfs Played</th>
+                          <th>Goals</th>
+                          <th>Saves</th>
+                          <th>Attacks</th>
+                          <th>Blocks</th>
+                          <th>Covers</th>
+                          <th>Receptions</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      {% for player_match in player_matches %}
+                      <tbody>
+                        <tr>
+                          <td>{{ player_match.player_id }}</td>
+                          <td>{{ player_match.match_id }}</td>
+                          <td>{{ player_match.sets_halfs_played }}</td>
+                          <td>{{ player_match.goals_scored }}</td>
+                          <td>{{ player_match.saves_made }}</td>
+                          <td>{{ player_match.attack_kills }}</td>
+                          <td>{{ player_match.block_kills }}</td>
+                          <td>{{ player_match.cover_saves }}</td>
+                          <td>{{ player_match.receptions_delivered }}</td>
+                          <td>
+                              <!-- Add your action buttons here -->
+                              <a href="" class="btn btn-secondary">Analyze</a>
+                              
+                          </td>
+                        </tr>
+                      </tbody>
+                      {% endfor %}
+                    </table>
+            </form>
+                
+                  </table>
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
