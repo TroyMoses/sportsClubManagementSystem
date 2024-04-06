@@ -13,24 +13,13 @@
                     <li> <a href="{% url 'player_team' %}">Player Team</a> </li>
                     <li> <a href="{% url 'player_matches' %}">Player Matches</a> </li>
                     <li> <a href="{% url 'player_injuries' %}">Player Injuries</a> </li>
-                    <li> <a href="{% url 'player_feedback_session' %}">Player Session Feedback</a> </li>
-                    <li> <a href="{% url 'player_feedback_match' %}">Player Game Feedback</a> </li>
                 </ul>
             </li>
             <li>
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Staff</span></a>
                 <ul aria-expanded="false">
                     <li><a href="{% url 'administrators' %}" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Aministrators</span></a> </li>
-                    <li>
-                        <li>
-                            <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Other Staff</span></a>
-                            <ul aria-expanded="false">
-                                <li> <a href="{% url 'staff' %}">Staff Details</a> </li>
-                                <li> <a href="{% url 'staff_feedback_session' %}">Session Feedback</a> </li>
-                                <li> <a href="{% url 'staff_feedback_match' %}">Game Feedback</a> </li>
-                            </ul>
-                        </li>
-                    </li>
+                    <li><a href="{% url 'staff' %}" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Other Staff</span></a> </li>
                 </ul>
             </li>
 
@@ -45,11 +34,29 @@
             
             <li class="nav-static-title">Administration</li>
             <li>
-                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Status</span></a>
+                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Feedback</span></a>
                 <ul aria-expanded="false">
-                    <li> <a href="{% url "reqst" %}">Requisition</a> </li>
+                    <li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="nav-title">Players Feedback</span></a>
+                            <ul aria-expanded="false">
+                                <li> <a href="{% url 'player_feedback_session' %}">Session Feedback</a> </li>
+            
+                                <li> <a href="{% url 'player_feedback_match' %}">Game Feedback</a> </li>
+                            </ul>
+                        </li> 
+                    </li>
 
-                    <li> <a href="{% url "repst" %}">Reports</a> </li>
+                    <li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="nav-title">Staff Feedback</span></a>
+                            <ul aria-expanded="false">
+                                <li> <a href="{% url 'staff_feedback_session' %}">Session Feedback</a> </li>
+            
+                                <li> <a href="{% url 'staff_feedback_match' %}">Game Feedback</a> </li>
+                            </ul>
+                        </li>
+                    </li>
                 </ul>
             </li>
             <li>
