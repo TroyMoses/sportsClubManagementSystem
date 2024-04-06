@@ -22,7 +22,8 @@ class PlayerFeedbackForm1(forms.ModelForm):
             'player_id',
             'training_session_id',
             'category',
-            'description'
+            'description',
+            'date',
         ]
 
 class PlayerFeedbackForm2(forms.ModelForm):
@@ -33,7 +34,8 @@ class PlayerFeedbackForm2(forms.ModelForm):
             'player_id',
             'match_id',
             'category',
-            'description'
+            'description',
+            'date',
         ]
 
 class StaffFeedbackForm1(forms.ModelForm):
@@ -44,7 +46,8 @@ class StaffFeedbackForm1(forms.ModelForm):
             'staff_id',
             'training_session_id',
             'category',
-            'description'
+            'description',
+            'date',
         ]
 
 class StaffFeedbackForm2(forms.ModelForm):
@@ -55,7 +58,8 @@ class StaffFeedbackForm2(forms.ModelForm):
             'staff_id',
             'match_id',
             'category',
-            'description'
+            'description',
+            'date',
         ]
 
 class PlayerForm(forms.ModelForm):

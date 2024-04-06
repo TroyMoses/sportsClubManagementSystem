@@ -20,8 +20,17 @@
             <li>
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Staff</span></a>
                 <ul aria-expanded="false">
-                    <li> <a href="{% url 'administrators' %}">Administrators</a> </li>
-                    <li> <a href="{% url 'staff' %}">Other Staff</a> </li>
+                    <li><a href="{% url 'administrators' %}" aria-expanded="false"><i class="nav-icon ti ti-user"></i><span class="nav-title">Aministrators</span></a> </li>
+                    <li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Other Staff</span></a>
+                            <ul aria-expanded="false">
+                                <li> <a href="{% url 'staff' %}">Staff Details</a> </li>
+                                <li> <a href="{% url 'staff_feedback_session' %}">Session Feedback</a> </li>
+                                <li> <a href="{% url 'staff_feedback_match' %}">Game Feedback</a> </li>
+                            </ul>
+                        </li>
+                    </li>
                 </ul>
             </li>
 

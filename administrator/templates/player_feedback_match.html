@@ -22,10 +22,10 @@
                         <tr>
                           <th>ID</th>
                           <th>Player ID</th>
-                          <th>Date Occured</th>
                           <th>Game ID</th>
                           <th>Category</th>
                           <th>Description</th>
+                          <th>Date Occured</th>
                         </tr>
                       </thead>
                       {% for player_feedback in player_feedback_match %}
@@ -36,6 +36,7 @@
                           <td>{{ player_feedback.match_id }}</td>
                           <td>{{ player_feedback.category }}</td>
                           <td>{{ player_feedback.description }}</td>
+                          <td>{{ player_feedback.date }}</td>
                         </tr>
                       </tbody>
                       {% endfor %}

@@ -107,6 +107,7 @@ class PlayerFeedback1(models.Model):
     ]
     category = models.CharField(max_length=30, choices=category_choices, default='Observations')
     description = models.TextField(default=None, max_length=200)
+    date = models.DateField(default=None)
 
 class PlayerFeedback2(models.Model):
     feedback_id = models.AutoField(primary_key=True)
@@ -118,6 +119,7 @@ class PlayerFeedback2(models.Model):
     ]
     category = models.CharField(max_length=30, choices=category_choices, default='Observations')
     description = models.TextField(default=None, max_length=200)
+    date = models.DateField(default=None)
 
 class StaffFeedback1(models.Model):
     feedback_id = models.AutoField(primary_key=True)
@@ -129,6 +131,7 @@ class StaffFeedback1(models.Model):
     ]
     category = models.CharField(max_length=30, choices=category_choices, default='Observations')
     description = models.TextField(default=None, max_length=200)
+    date = models.DateField(default=None)
 
 class StaffFeedback2(models.Model):
     feedback_id = models.AutoField(primary_key=True)
@@ -140,6 +143,7 @@ class StaffFeedback2(models.Model):
     ]
     category = models.CharField(max_length=30, choices=category_choices, default='Observations')
     description = models.TextField(default=None, max_length=200)
+    date = models.DateField(default=None)
 
 
 class PlayerTeam(models.Model):

@@ -196,4 +196,11 @@ def player_feedback_match(request):
     player_feedback_match = PlayerFeedback2.objects.all()
     return render(request, "player_feedback_match.html", {'player_feedback_match': player_feedback_match})
 
+def staff_feedback_session(request):
+    staff_feedback_session = StaffFeedback1.objects.all()
+    return render(request, "staff_feedback_session.html", {'staff_feedback_session': staff_feedback_session})
+
+def staff_feedback_match(request):
+    staff_feedback_match = StaffFeedback2.objects.all()
+    return render(request, "staff_feedback_match.html", {'staff_feedback_match': staff_feedback_match})
 

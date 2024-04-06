@@ -13,7 +13,7 @@
                 
                 <div class="row">
                   <div class="col-10">
-                    <h2 class="text-muted">Players Session Feedback</h2>
+                    <h2 class="text-muted">Staff Session Feedback</h2>
                   </div>
               </div><br />
                 <div class="display_table">
@@ -21,22 +21,22 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Player ID</th>
+                          <th>Staff ID</th>
                           <th>Session ID</th>
                           <th>Category</th>
                           <th>Description</th>
                           <th>Date Occured</th>
                         </tr>
                       </thead>
-                      {% for player_feedback in player_feedback_session %}
+                      {% for staff_feedback in staff_feedback_session %}
                       <tbody>
                         <tr>
-                          <td>{{ player_feedback.feedback_id }}</td>
-                          <td>{{ player_feedback.player_id }}</td>
-                          <td>{{ player_feedback.training_session_id }}</td>
-                          <td>{{ player_feedback.category }}</td>
-                          <td>{{ player_feedback.description }}</td>
-                          <td>{{ player_feedback.date }}</td>
+                          <td>{{ staff_feedback.feedback_id }}</td>
+                          <td>{{ staff_feedback.staff_id }}</td>
+                          <td>{{ staff_feedback.training_session_id }}</td>
+                          <td>{{ staff_feedback.category }}</td>
+                          <td>{{ staff_feedback.description }}</td>
+                          <td>{{ staff_feedback.date }}</td>
                         </tr>
                       </tbody>
                       {% endfor %}

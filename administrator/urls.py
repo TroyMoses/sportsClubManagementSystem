@@ -28,4 +28,6 @@ urlpatterns = [
     path('player_injuries/', views.player_injuries, name="player_injuries"),
     path('player_feedback_session/', views.player_feedback_session, name="player_feedback_session"),
     path('player_feedback_match/', views.player_feedback_match, name="player_feedback_match"),
+    path('staff_feedback_session/', views.staff_feedback_session, name="staff_feedback_session"),
+    path('staff_feedback_match/', views.staff_feedback_match, name="staff_feedback_match"),
 ]
