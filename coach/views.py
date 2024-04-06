@@ -19,8 +19,8 @@ def req(request):
 
 
 #===========Francis calling the dashbourd==============
-def staffDashboard(request):
-    return render(request, 'client/staffDash.html')
+def coachDashboard(request):
+    return render(request, 'client/coachDashboard.html')
 
 def client(request):
     return render(request, 'client.html')
