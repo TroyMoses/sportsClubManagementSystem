@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse
+from administrator.forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm, PlayerTeamForm, PlayerGameForm, InjuryForm, PlayerFeedbackForm1, PlayerFeedbackForm2, StaffFeedbackForm1, StaffFeedbackForm2
+from administrator.models import Player, Administrator, Staff, Team, Match, TrainingSession, PlayerTeam, PlayerGame, Injury, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
 
 # Create your views here.
 
@@ -13,9 +15,6 @@ def lock(request):
 
 def dep(request):
     return render(request, 'dep.html')
-
-def req(request):
-    return render(request, 'client/req.html')
 
 def coachDashboard(request):
     return render(request, 'coach/coachDashboard.html')

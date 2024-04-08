@@ -18,17 +18,17 @@
             <li>
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-user"></i> <span class="nav-title">Staff</span></a>
                 <ul aria-expanded="false">
-                    <li><a href="{% url 'administrators' %}" aria-expanded="false"><span class="nav-title">Aministrators</span></a> </li>
-                    <li><a href="{% url 'staff' %}" aria-expanded="false"><span class="nav-title">Other Staff</span></a> </li>
+                    <li><a href="{% url 'coach_administrators' %}" aria-expanded="false"><span class="nav-title">Aministrators</span></a> </li>
+                    <li><a href="{% url 'coach_staff' %}" aria-expanded="false"><span class="nav-title">Other Staff</span></a> </li>
                 </ul>
             </li>
 
-            <li><a href="{% url "teams" %}" aria-expanded="false"><i class="nav-icon ti ti-bag"></i><span class="nav-title">Teams</span></a> </li>
+            <li><a href="{% url 'coach_teams' %}" aria-expanded="false"><i class="nav-icon ti ti-bag"></i><span class="nav-title">Teams</span></a> </li>
             <li>
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">Matches & Sessions</span></a>
                 <ul aria-expanded="false">
-                    <li> <a href="{% url 'matches' %}">Matches</a> </li>
-                    <li> <a href="{% url 'sessions' %}">Training Sessions</a> </li>
+                    <li> <a href="{% url 'coach_matches' %}">Matches</a> </li>
+                    <li> <a href="{% url 'coach_sessions' %}">Training Sessions</a> </li>
                 </ul>
             </li>
             
@@ -40,9 +40,9 @@
                         <li>
                             <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="nav-title">Players Feedback</span></a>
                             <ul aria-expanded="false">
-                                <li> <a href="{% url 'player_feedback_session' %}">Session Feedback</a> </li>
+                                <li> <a href="{% url 'coach_player_feedback_session' %}">Session Feedback</a> </li>
             
-                                <li> <a href="{% url 'player_feedback_match' %}">Game Feedback</a> </li>
+                                <li> <a href="{% url 'coach_player_feedback_match' %}">Game Feedback</a> </li>
                             </ul>
                         </li> 
                     </li>
@@ -51,9 +51,9 @@
                         <li>
                             <a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><span class="nav-title">Staff Feedback</span></a>
                             <ul aria-expanded="false">
-                                <li> <a href="{% url 'staff_feedback_session' %}">Session Feedback</a> </li>
+                                <li> <a href="{% url 'coach_staff_feedback_session' %}">Session Feedback</a> </li>
             
-                                <li> <a href="{% url 'staff_feedback_match' %}">Game Feedback</a> </li>
+                                <li> <a href="{% url 'coach_staff_feedback_match' %}">Game Feedback</a> </li>
                             </ul>
                         </li>
                     </li>

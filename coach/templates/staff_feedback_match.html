@@ -1,0 +1,52 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid">
+    <!-- begin row -->
+    <div class="row">
+        <div class="col-md-12 m-b-30">
+            <!-- begin page title -->
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                
+                <div class="row">
+                  <div class="col-10">
+                    <h2 class="text-muted">Staff Game Feedback</h2>
+                  </div>
+              </div><br />
+                <div class="display_table">
+                    <table class='table table-bordered'>
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Staff ID</th>
+                          <th>Session ID</th>
+                          <th>Category</th>
+                          <th>Description</th>
+                          <th>Date Occured</th>
+                        </tr>
+                      </thead>
+                      {% for staff_feedback in staff_feedback_match %}
+                      <tbody>
+                        <tr>
+                          <td>{{ staff_feedback.feedback_id }}</td>
+                          <td>{{ staff_feedback.staff_id }}</td>
+                          <td>{{ staff_feedback.match_id }}</td>
+                          <td>{{ staff_feedback.category }}</td>
+                          <td>{{ staff_feedback.description }}</td>
+                          <td>{{ staff_feedback.date }}</td>
+                        </tr>
+                      </tbody>
+                      {% endfor %}
+                    </table>
+            </form>
+                
+                  </table>
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
