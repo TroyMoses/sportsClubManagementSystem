@@ -1,0 +1,60 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid">
+    <!-- begin row -->
+    <div class="row">
+        <div class="col-md-12 m-b-30">
+            <!-- begin page title -->
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                
+                <div class="row">
+                  <div class="col-10">
+                    <h2 class="text-muted">Staff Details</h2>
+                  </div>
+                  <div class="col-2">
+                    <a class="btn btn-lg btn-secondary" href="{% url 'add_staff' %}" role="button">Add Staff</a>
+                  </div>
+              </div><br />
+                <div class="display_table">
+                    <table class='table table-bordered'>
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Role</th>
+                          <th>Phone</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      {% for staff in staff %}
+                      <tbody>
+                        <tr>
+                          <td>{{ staff.staff_id }}</td>
+                          <td>{{ staff.first_name }}</td>
+                          <td>{{ staff.last_name }}</td>
+                          <td>{{ staff.role }}</td>
+                          <td>{{ staff.contact_no }}</td>
+                          <td>
+                              <!-- Add your action buttons here -->
+                              <a href="" class="btn btn-secondary">Update</a>
+                              <a href="" class="btn btn-danger">Delete</a>
+                              
+                          </td>
+                        </tr>
+                      </tbody>
+                      {% endfor %}
+                    </table>
+            </form>
+                
+                  </table>
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
