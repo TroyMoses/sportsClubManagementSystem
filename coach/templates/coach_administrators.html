@@ -25,10 +25,9 @@
                           <th>Last Name</th>
                           <th>Role</th>
                           <th>Phone</th>
-                          <th>Action</th>
                         </tr>
                       </thead>
-                      {% for administrator in administrators %}
+                      {% for administrator in coach_administrators %}
                       <tbody>
                         <tr>
                           <td>{{ administrator.admin_id }}</td>
@@ -36,12 +35,6 @@
                           <td>{{ administrator.last_name }}</td>
                           <td>{{ administrator.role }}</td>
                           <td>{{ administrator.contact_no }}</td>
-                          <td>
-                              <!-- Add your action buttons here -->
-                              <a href="" class="btn btn-secondary">Update</a>
-                              <a href="" class="btn btn-danger">Delete</a>
-                              
-                          </td>
                         </tr>
                       </tbody>
                       {% endfor %}
