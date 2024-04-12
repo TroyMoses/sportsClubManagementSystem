@@ -2474,9 +2474,11 @@
                     );
                     chart.render();
                }
-
-               // analytics8
-                var analytics8 = jQuery('#analytics8')
+            
+            
+            
+            // analytics8
+            var analytics8 = jQuery('#analytics8')
             if (analytics8.length > 0) {
                 var options = {
                     chart: {
