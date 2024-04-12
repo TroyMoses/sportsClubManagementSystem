@@ -11,7 +11,6 @@ urlpatterns = [
     path('coach_players/', views.coach_players, name="coach_players"),
     path('coach_add_player/', views.coach_add_player, name="coach_add_player"),
     path('coach_administrators/', views.coach_administrators, name="coach_administrators"),
-    path('coach_add_administrator/', views.coach_add_administrator, name="coach_add_administrator"),
     path('coach_staff/', views.coach_staff, name="coach_staff"),
     path('coach_add_staff/', views.coach_add_staff, name="coach_add_staff"),
     path('coach_teams/', views.coach_teams, name="coach_teams"),
