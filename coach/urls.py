@@ -26,5 +26,7 @@ urlpatterns = [
     path('coach_player_feedback_session/', views.coach_player_feedback_session, name="coach_player_feedback_session"),
     path('coach_player_feedback_match/', views.coach_player_feedback_match, name="coach_player_feedback_match"),
     path('coach_staff_feedback_session/', views.coach_staff_feedback_session, name="coach_staff_feedback_session"),
+    path('coach_add_staff_feedback_session/', views.coach_add_staff_feedback_session, name="coach_add_staff_feedback_session"),
     path('coach_staff_feedback_match/', views.coach_staff_feedback_match, name="coach_staff_feedback_match"),
+    path('coach_add_staff_feedback_match/', views.coach_add_staff_feedback_match, name="coach_add_staff_feedback_match"),
 ]
