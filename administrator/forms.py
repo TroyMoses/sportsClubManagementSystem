@@ -46,8 +46,8 @@ class StaffFeedbackForm1(forms.ModelForm):
             'staff_id',
             'training_session_id',
             'category',
-            'description',
             'date',
+            'description',
         ]
 
 class StaffFeedbackForm2(forms.ModelForm):
