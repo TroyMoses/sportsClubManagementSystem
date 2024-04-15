@@ -58,8 +58,8 @@ class StaffFeedbackForm2(forms.ModelForm):
             'staff_id',
             'match_id',
             'category',
-            'description',
             'date',
+            'description',
         ]
 
 class PlayerForm(forms.ModelForm):

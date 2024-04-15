@@ -149,4 +149,12 @@ def coach_add_staff_feedback_session(request):
     return render(request, "coach_add_staff_feedback_session.html", {'form': form})
 
 def coach_add_staff_feedback_match(request):
-    pass
+    form = StaffFeedbackForm2(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('coach_staff_feedback_match'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "coach_add_staff_feedback_match.html", {'form': form})
+
