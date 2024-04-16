@@ -10,7 +10,6 @@
             <form method="POST" action="{% url 'coach_add_match' %}">
               {% csrf_token %}
               <h2 class="text-muted">Add Match</h2><br />
-              <!-- {{ form|crispy}} -->
 
                <div class="row g-3 align-items-center">
                 {% for field in form %}
