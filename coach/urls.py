@@ -22,6 +22,7 @@ urlpatterns = [
     path('coach_player_team/', views.coach_player_team, name="coach_player_team"),
     path('coach_add_player_team/', views.coach_add_player_team, name="coach_add_player_team"),
     path('coach_player_matches/', views.coach_player_matches, name="coach_player_matches"),
+    path('coach_add_player_match/', views.coach_add_player_match, name="coach_add_player_match"),
     path('coach_player_injuries/', views.coach_player_injuries, name="coach_player_injuries"),
     path('coach_player_feedback_session/', views.coach_player_feedback_session, name="coach_player_feedback_session"),
     path('coach_player_feedback_match/', views.coach_player_feedback_match, name="coach_player_feedback_match"),
