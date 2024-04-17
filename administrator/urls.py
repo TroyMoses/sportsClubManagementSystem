@@ -11,6 +11,7 @@ urlpatterns = [
     path('reqst/', views.reqStatus, name="reqst"),
     path('repst/', views.reportStatus, name="repst"),
     path('players/', views.players, name="players"),
+    path('player_attendance/', views.player_attendance, name="player_attendance"),
     path('add_player/', views.add_player, name="add_player"),
     path('administrators/', views.administrators, name="administrators"),
     path('add_administrator/', views.add_administrator, name="add_administrator"),

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
-from administrator.forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm, PlayerTeamForm, PlayerGameForm, InjuryForm, PlayerFeedbackForm1, PlayerFeedbackForm2, StaffFeedbackForm1, StaffFeedbackForm2
-from administrator.models import Player, Administrator, Staff, Team, Match, TrainingSession, PlayerTeam, PlayerGame, Injury, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
+from administrator.forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm, PlayerTeamForm, PlayerGameForm, InjuryForm, PlayerFeedbackForm1, PlayerFeedbackForm2, StaffFeedbackForm1, StaffFeedbackForm2, AttendanceForm
+from administrator.models import Player, Administrator, Staff, Team, Match, TrainingSession, PlayerTeam, PlayerGame, Injury, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2, Attendance
 from django.contrib import messages
 
 # Create your views here.
@@ -36,6 +36,21 @@ def coach_add_player(request):
     else:
         messages.error(request, "Provided data failed validation") 
     return render(request, "coach_add_player.html", {'form': form})
+
+def coach_player_attendance(request):
+    coach_player_attendance = Attendance.objects.all()
+    return render(request, "coach_player_attendance.html", {'coach_player_attendance': coach_player_attendance})
+
+def coach_add_player_attendance(request):
+    form = AttendanceForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('coach_player_attendance'))
+    else:
+        messages.error(request, "Provided data failed validation") 
+    return render(request, "coach_add_player_attendance.html", {'form': form})
+
 
 def coach_administrators(request):
     coach_administrators = Administrator.objects.all()
