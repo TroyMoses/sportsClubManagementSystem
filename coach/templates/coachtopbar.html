@@ -25,12 +25,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mega Menu
+                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compose Message
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
-                                <div class="col-sm-2 p-20">
+                                <!-- <div class="col-sm-2 p-20">
                                     <h4>UI Kit</h4>
                                     <ul>
                                         <li class="nav-link">
@@ -62,8 +62,8 @@
                                             <a href="ui-tabs.html">Tabs</a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="col-sm-2 p-20">
+                                </div> -->
+                                <!-- <div class="col-sm-2 p-20">
                                     <h4>Pages</h4>
                                     <ul>
                                         <li class="nav-link">
@@ -94,25 +94,25 @@
                                             <a href="page-coming-soon.html">Coming Soon</a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="col-sm-4 p-20">
-                                    <h4>Contact Us</h4>
+                                </div> -->
+                                <div class="col-sm-6 p-20">
+                                    <h4>Send Message</h4>
                                     <div>
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="Password1" placeholder="Enter Name">
+                                                <input type="text" class="form-control" id="Password1" placeholder="Send To">
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="Email1" placeholder="Enter Email">
+                                                <input type="text" class="form-control" id="Password1" placeholder="Enter Subject">
                                             </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" placeholder="Message" id="Textarea1" rows="3"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary text-uppercase">Submit</button>
+                                            <button type="submit" class="btn btn-primary text-uppercase">Send</button>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <!-- <div class="col-sm-4">
                                     <div class="chart-wrap">
                                         <div class="p-20">
                                             <h4 class="mb-1">Page Views</h4>
@@ -123,11 +123,11 @@
                                             <div id="pageview"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop Down
                             <i class="fa fa-angle-down"></i>
                         </a>
@@ -136,7 +136,7 @@
                             <a class="dropdown-item nav-link" href="javascript:void(0)">Another action</a>
                             <a class="dropdown-item nav-link" href="javascript:void(0)">Something else here</a>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
                         <a href="javascript:void(0)" class="nav-link expand">
                             <i class="icon-size-fullscreen"></i>
@@ -151,7 +151,7 @@
                         <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
                             <ul>
                                 <li class="dropdown-header bg-gradient p-4 text-white text-left">Messages
-                                    <label class="label label-info label-round">6</label>
+                                    <label class="label label-info label-round">1</label>
                                     <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0">
                                         <span class="font-13"> Mark all as read</span></a>
                                 </li>
@@ -161,76 +161,11 @@
                                             <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{% static 'img/avtar/03.jpg' %}" alt="user3">
+                                                        <img class="img-fluid" src="{% static 'img/avtar/02.jpg' %}" alt="user3">
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">Brianing Leyon</p>
-                                                        <small>You will sail along until you...</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="assets/img/avtar/01.jpg" alt="user">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Jimmyimg Leyon</p>
-                                                        <small>Okay</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{% static 'img/avtar/02.jpg' %}" alt="user2">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Brainjon Leyon</p>
-                                                        <small>So, make the decision...</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{% static 'img/avtar/04.jpg' %}" alt="user4">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Smithmin Leyon</p>
-                                                        <small>Thanks</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{% static 'img/avtar/05.jpg' %}" alt="user5">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Jennyns Leyon</p>
-                                                        <small>How are you</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{% static 'img/avtar/06.jpg' %}" alt="user6">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Demian Leyon</p>
-                                                        <small>I like your themes</small>
+                                                        <p class="font-weight-bold">Kirabo Jacob</p>
+                                                        <small>Okay, you will meet me in office</small>
                                                     </div>
                                                 </div>
                                             </a>
@@ -268,8 +203,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">New registered user</p>
-                                                        <small>Just now</small>
+                                                        <p class="font-weight-bold">New registered player</p>
+                                                        <small>20 min</small>
                                                     </div>
                                                 </div>
                                             </a>
@@ -283,7 +218,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">New invoice received</p>
+                                                        <p class="font-weight-bold">New feedback received</p>
                                                         <small>22 min</small>
                                                     </div>
                                                 </div>
@@ -298,7 +233,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">Server error report</p>
+                                                        <p class="font-weight-bold">New game report</p>
                                                         <small>7 min</small>
                                                     </div>
                                                 </div>
@@ -313,7 +248,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">Database report</p>
+                                                        <p class="font-weight-bold">New registered staff</p>
                                                         <small>1 day</small>
                                                     </div>
                                                 </div>
@@ -328,7 +263,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">Order confirmation</p>
+                                                        <p class="font-weight-bold">Event added</p>
                                                         <small>2 day</small>
                                                     </div>
                                                 </div>
@@ -363,15 +298,15 @@
                     </li>
                     <li class="nav-item dropdown user-profile">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{% static 'img/avtar/02.jpg' %}" alt="avtar-img">
+                            <img src="{% static 'img/avtar/03.jpg' %}" alt="avtar-img">
                             <span class="bg-success user-status"></span>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="bg-gradient px-4 py-3">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-1">
-                                        <h4 class="text-white mb-0">Alice Williams</h4>
-                                        <small class="text-white">Henry@example.com</small>
+                                        <h4 class="text-white mb-0">Coach Paul</h4>
+                                        <small class="text-white">paul@bugemauniv.ac.ug</small>
                                     </div>
                                     <a href="" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
                                                     class="zmdi zmdi-power"></i></a>
@@ -382,7 +317,7 @@
                                     <i class="fa fa-user pr-2 text-success"></i> Profile</a>
                                 <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
                                     <i class="fa fa-envelope pr-2 text-primary"></i> Inbox
-                                    <span class="badge badge-primary ml-auto">6</span>
+                                    <span class="badge badge-primary ml-auto">1</span>
                                 </a>
                                 <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
                                     <i class=" ti ti-settings pr-2 text-info"></i> Settings
