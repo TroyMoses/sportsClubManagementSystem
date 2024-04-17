@@ -116,14 +116,14 @@ def coach_player_matches(request):
     return render(request, "coach_player_matches.html", {'coach_player_matches': coach_player_matches})
 
 def coach_add_player_match(request):
-    form = PlayerTeamForm(request.POST)
+    form = PlayerGameForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('coach_player_team'))
+            return redirect(reverse('coach_player_matches'))
     else:
         messages.error(request, "Provided data failed validation") 
-    return render(request, "coach_add_player_team.html", {'form': form})
+    return render(request, "coach_add_player_match.html", {'form': form})
 
 def coach_player_injuries(request):
     coach_player_injuries = Injury.objects.all()

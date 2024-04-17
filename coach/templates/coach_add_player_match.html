@@ -1,0 +1,30 @@
+{% extends 'coachroot.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid">
+    <!-- begin row -->
+    <div class="row">
+        <div class="col-md-12 m-b-30">
+            <!-- begin page title -->
+
+            <form method="POST" action="{% url 'coach_add_player_match' %}">
+              {% csrf_token %}
+              <h2 class="text-muted">Add Game Analysis</h2><br />
+
+               <div class="row g-3 align-items-center">
+                {% for field in form %}
+                  <div class="col-3">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {{ field.errors }}<br />
+                  </div>
+                  {% endfor %}
+              </div><br />
+
+              <button type="submit" class="btn btn-secondary">Add Analysis</button>
+            </form><br/>
+            <a href="{% url 'coach_player_matches' %}"><button class="btn btn-secondary">Cancel</button></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
