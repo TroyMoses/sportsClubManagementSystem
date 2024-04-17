@@ -1,5 +1,5 @@
 from django import forms
-from .models import Player, Administrator, Staff, Injury, Team, PlayerTeam, PlayerGame, TrainingSession, Attendance, Match, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
+from .models import Player, Administrator, Staff, Injury, Team, PlayerTeam, PlayerGame, TrainingSession, Match, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
 from django.contrib.auth.hashers import make_password
 from .models import Department, Attendance1, Attendance2
 
@@ -161,7 +161,6 @@ class AttendanceForm2(forms.ModelForm):
             'attendance_id',
             'player_id',
             'match_id',
-            'staff_id',
             'date',
             'status',
         ]

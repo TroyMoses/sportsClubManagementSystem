@@ -180,7 +180,6 @@ class Attendance1(models.Model):
     attendance_id = models.AutoField(primary_key=True)
     player_id = models.ForeignKey(Player, on_delete=models.CASCADE)
     training_session_id = models.ForeignKey(TrainingSession, blank=True, on_delete=models.CASCADE)
-    match_id = models.ForeignKey(Match, blank=True, on_delete=models.CASCADE)
     staff_id = models.ForeignKey(Staff, blank=True, on_delete=models.CASCADE)
     date = models.DateTimeField()
     status_choices = [
@@ -192,9 +191,7 @@ class Attendance1(models.Model):
 class Attendance2(models.Model):
     attendance_id = models.AutoField(primary_key=True)
     player_id = models.ForeignKey(Player, on_delete=models.CASCADE)
-    training_session_id = models.ForeignKey(TrainingSession, blank=True, on_delete=models.CASCADE)
     match_id = models.ForeignKey(Match, blank=True, on_delete=models.CASCADE)
-    staff_id = models.ForeignKey(Staff, blank=True, on_delete=models.CASCADE)
     date = models.DateTimeField()
     status_choices = [
         ('Present', 'Present'),
