@@ -37,12 +37,12 @@ def coach_add_player(request):
         messages.error(request, "Provided data failed validation") 
     return render(request, "coach_add_player.html", {'form': form})
 
-def coach_player_attendance(request):
-    coach_player_attendance = Attendance.objects.all()
+def coach_player_attendance_session(request):
+    coach_player_attendance = Attendance1.objects.all()
     return render(request, "coach_player_attendance.html", {'coach_player_attendance': coach_player_attendance})
 
-def coach_add_player_attendance(request):
-    form = AttendanceForm(request.POST)
+def coach_add_player_attendance_session(request):
+    form = AttendanceForm1(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             form.save()

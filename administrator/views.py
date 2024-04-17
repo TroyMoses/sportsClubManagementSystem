@@ -7,8 +7,8 @@ from django.http import JsonResponse, HttpResponse
 from django.conf import settings
 from .email_backend import EmailBackend
 from django.contrib.auth import login, logout
-from .forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm, PlayerTeamForm, PlayerGameForm, InjuryForm, PlayerFeedbackForm1, PlayerFeedbackForm2, StaffFeedbackForm1, StaffFeedbackForm2, AttendanceForm
-from .models import Player, Administrator, Staff, Team, Match, TrainingSession, PlayerTeam, PlayerGame, Injury, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2, Attendance
+from .forms import PlayerForm, AdministratorForm, StaffForm, TeamForm, MatchForm, TrainingSessionForm, PlayerTeamForm, PlayerGameForm, InjuryForm, PlayerFeedbackForm1, PlayerFeedbackForm2, StaffFeedbackForm1, StaffFeedbackForm2, AttendanceForm1, AttendanceForm2
+from .models import Player, Administrator, Staff, Team, Match, TrainingSession, PlayerTeam, PlayerGame, Injury, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2, Attendance1, Attendance2
 
 def account_login(request):
     pass
@@ -86,8 +86,8 @@ def players(request):
     players = Player.objects.all()
     return render(request, "players.html", {'players': players})
 
-def player_attendance(request):
-    player_attendance = Attendance.objects.all()
+def player_attendance_session(request):
+    player_attendance = Attendance1.objects.all()
     return render(request, "player_attendance.html", {'player_attendance': player_attendance})
 
 def add_player(request):

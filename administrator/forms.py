@@ -1,7 +1,7 @@
 from django import forms
 from .models import Player, Administrator, Staff, Injury, Team, PlayerTeam, PlayerGame, TrainingSession, Attendance, Match, PlayerFeedback1, PlayerFeedback2, StaffFeedback1, StaffFeedback2
 from django.contrib.auth.hashers import make_password
-from .models import Department
+from .models import Department, Attendance1, Attendance2
 
 class AdministratorForm(forms.ModelForm):
     class Meta:
@@ -142,13 +142,24 @@ class MatchForm(forms.ModelForm):
             'result',
         ]
 
-class AttendanceForm(forms.ModelForm):
+class AttendanceForm1(forms.ModelForm):
     class Meta:
-        model = Attendance
+        model = Attendance1
         fields = [
             'attendance_id',
             'player_id',
             'training_session_id',
+            'staff_id',
+            'date',
+            'status',
+        ]
+
+class AttendanceForm2(forms.ModelForm):
+    class Meta:
+        model = Attendance2
+        fields = [
+            'attendance_id',
+            'player_id',
             'match_id',
             'staff_id',
             'date',
