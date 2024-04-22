@@ -38,18 +38,18 @@ def coach_add_player(request):
     return render(request, "coach_add_player.html", {'form': form})
 
 def coach_player_attendance_session(request):
-    coach_player_attendance = Attendance1.objects.all()
-    return render(request, "coach_player_attendance.html", {'coach_player_attendance': coach_player_attendance})
+    coach_player_attendance_session = Attendance1.objects.all()
+    return render(request, "coach_player_attendance_session.html", {'coach_player_attendance_session': coach_player_attendance_session})
 
 def coach_add_player_attendance_session(request):
     form = AttendanceForm1(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('coach_player_attendance'))
+            return redirect(reverse('coach_player_attendance_session'))
     else:
         messages.error(request, "Provided data failed validation") 
-    return render(request, "coach_add_player_attendance.html", {'form': form})
+    return render(request, "coach_add_player_attendance_session.html", {'form': form})
 
 
 def coach_administrators(request):

@@ -87,8 +87,8 @@ def players(request):
     return render(request, "players.html", {'players': players})
 
 def player_attendance_session(request):
-    player_attendance = Attendance1.objects.all()
-    return render(request, "player_attendance.html", {'player_attendance': player_attendance})
+    player_attendance_session = Attendance1.objects.all()
+    return render(request, "player_attendance_session.html", {'player_attendance_session': player_attendance_session})
 
 def add_player(request):
     form = PlayerForm(request.POST)
