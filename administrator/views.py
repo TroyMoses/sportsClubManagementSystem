@@ -29,6 +29,23 @@ def account_login(request):
 
     # return render(request, "auth/login.html")
 
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        if email == 'karemera@gmail.com' and password == 'karemera':
+		# if user is not None:
+			# login(request, user)
+            messages.success(request, "You Have Been Logged In!")
+            return redirect('adminDashboard')
+        elif email == 'karemera@gmail.com' and password == 'charles':
+            messages.success(request, "You Have Been Logged In!")
+            return redirect('staffDashboard')
+        else:
+            messages.success(request, "There Was An Error Logging In, Please Try Again...")
+            return redirect('login')
+    else:
+        return render(request, 'auth/login.html')
 
 def account_register(request):
     pass
