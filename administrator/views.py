@@ -33,14 +33,12 @@ def login(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        if email == 'karemera@gmail.com' and password == 'karemera':
-		# if user is not None:
-			# login(request, user)
+        if email == 'troyadmin@gmail.com' and password == 'Troyadmin@6240/.':
             messages.success(request, "You Have Been Logged In!")
             return redirect('adminDashboard')
-        elif email == 'karemera@gmail.com' and password == 'charles':
+        elif email == 'troycoach@gmail.com' and password == 'Troycoach@4015/.':
             messages.success(request, "You Have Been Logged In!")
-            return redirect('staffDashboard')
+            return redirect('coachDashboard')
         else:
             messages.success(request, "There Was An Error Logging In, Please Try Again...")
             return redirect('login')
