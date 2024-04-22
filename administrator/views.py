@@ -41,7 +41,7 @@ def login(request):
             return redirect('coachDashboard')
         else:
             messages.success(request, "There Was An Error Logging In, Please Try Again...")
-            return redirect('login')
+            return redirect('adminlogin')
     else:
         return render(request, 'auth/login.html')
 
