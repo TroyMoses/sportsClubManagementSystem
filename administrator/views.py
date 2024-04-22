@@ -31,12 +31,12 @@ def account_login(request):
 
 def login(request):
     if request.method == 'POST':
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
-        if email == 'troyadmin@gmail.com' and password == 'Troyadmin@6240/.':
+        if username == 'Troyadmin' and password == 'Troyadmin@6240/.':
             messages.success(request, "You Have Been Logged In!")
             return redirect('adminDashboard')
-        elif email == 'troycoach@gmail.com' and password == 'Troycoach@4015/.':
+        elif username == 'Troycoach' and password == 'Troycoach@4015/.':
             messages.success(request, "You Have Been Logged In!")
             return redirect('coachDashboard')
         else:
