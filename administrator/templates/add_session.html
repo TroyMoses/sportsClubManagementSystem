@@ -2,15 +2,12 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container-fluid">
-    <!-- begin row -->
     <div class="row">
         <div class="col-md-12 m-b-30">
-            <!-- begin page title -->
 
             <form method="POST" action="{% url 'add_session' %}">
               {% csrf_token %}
               <h2 class="text-muted">Add Session</h2><br />
-              <!-- {{ form|crispy}} -->
 
                <div class="row g-3 align-items-center">
                 {% for field in form %}
