@@ -4,12 +4,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 m-b-30">
-            <!-- begin page title -->
 
             <form method="POST" action="{% url 'add_player_team' %}">
               {% csrf_token %}
               <h2 class="text-muted">Add Player Team</h2><br />
-              <!-- {{ form|crispy}} -->
 
                <div class="row g-3 align-items-center">
                 {% for field in form %}
