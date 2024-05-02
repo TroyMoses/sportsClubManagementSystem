@@ -2,10 +2,8 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container-fluid">
-    <!-- begin row -->
     <div class="row">
         <div class="col-md-12 m-b-30">
-            <!-- begin page title -->
 
             <form method="POST" action="{% url 'add_administrator' %}">
               {% csrf_token %}
